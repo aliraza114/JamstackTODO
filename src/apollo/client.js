@@ -21,7 +21,7 @@ const authLink = setContext((_, { headers }) => {
   
   
 
-  console.log(user)
+  console.log('user ',  user)
   return {
     headers: {
       ...headers,

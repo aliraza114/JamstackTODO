@@ -12,7 +12,7 @@ export const identityContext = React.createContext<initialVal>({
 })
 
 const IdentityProvider = props => {
-  const [user, setUser] = useState<netlifyIdentity.User | null>(null)
+  const [user, setUser] = useState<netlifyIdentity.User | null> (null)
 
   useEffect(() => {
     netlifyIdentity.init({})

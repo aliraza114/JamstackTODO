@@ -11,8 +11,6 @@ export default function Home() {
   return (
     <PageLayout>
       <Jumbotron className={styles.jumbotron}>
-        <h2>Let us keep track of things for you!</h2>
-
         {!user ? (
           <Button
             onClick={() => {
@@ -27,17 +25,11 @@ export default function Home() {
             onClick={() => {
               identity.logout()
             }}
-            variant="primary"
+            variant="secondary"
           >
             Logout
           </Button>
         )}
-        <ul>
-          <li>Easy to use</li>
-          <li>User friendly interface</li>
-          <li>Cloud storage</li>
-          <li>No hidden charges</li>
-        </ul>
       </Jumbotron>
     </PageLayout>
   )

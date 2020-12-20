@@ -7,6 +7,7 @@ const faunadb = require("faunadb"),
     secret: process.env.FAUNADB_ID,
   })
 
+  console.log('fauna db ', process.env.FAUNADB_ID)
 const typeDefs = gql`
   type Query {
     todos: [Todo]!
@@ -25,6 +26,7 @@ const typeDefs = gql`
 const resolvers = {
   Query: {
     todos: async (parent, args, {user}) => {
+      console.log('User ', user)
       if (!user){
         return [];
       }
@@ -58,7 +60,7 @@ const resolvers = {
   },
   Mutation:{
       addTodo: async (_,{value},{user})=>{
-
+        console.log('here user ', user)
         if (!user){
           throw new Error ("Must be authenticated to insert todos")
         }
